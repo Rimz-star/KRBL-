@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            color: #00b4db;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .gallery img {
+            margin: 1rem;
+            border-radius: 15px;
+        }
+
+        .img-16-9 {
+            width: 300px;
+            height: 169px;
+            object-fit: cover;
+        }
+
+        .img-1-1 {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gallery Kami</h1>
+    <div class="gallery">
+        <img src="https://placehold.co/300x169" alt="Gambar 1" class="img-16-9">
+        <img src="https://placehold.co/300x169" alt="Gambar 2" class="img-16-9">
+        <img src="https://placehold.co/300x169" alt="Gambar 3" class="img-16-9">
+        <img src="https://placehold.co/300x169" alt="Gambar 4" class="img-16-9">
+        <img src="https://placehold.co/300x169" alt="Gambar 5" class="img-16-9">
+    </div>
+    <img src="https://placehold.co/300x300" alt="Gambar 1:1" class="img-1-1">
+    <p>Ini adalah gambar 1:1 yang menggambarkan momen spesial kami.</p>
+    <a href="https://wa.me/1234567890" class="whatsapp-button">Gabung di WhatsApp</a>
+</body>
+</html>
