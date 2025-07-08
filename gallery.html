@@ -31,9 +31,10 @@
 
         .gallery {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-wrap: nowrap; /* Mengubah menjadi nowrap untuk berjejeran ke kanan */
+            justify-content: flex-start; /* Mengatur agar gambar berjejer ke kanan */
             margin: 2rem 0;
+            overflow-x: auto; /* Menambahkan scroll horizontal jika diperlukan */
         }
 
         .gallery img {
@@ -41,9 +42,9 @@
             border-radius: 15px;
         }
 
-        .img-16-9 {
-            width: 300px;
-            height: 169px;
+        .img-9-16 {
+            width: 169px; /* Lebar untuk rasio 9:16 */
+            height: 300px; /* Tinggi untuk rasio 9:16 */
             object-fit: cover;
         }
 
@@ -72,14 +73,20 @@
 <body>
     <h1>Gallery Kami</h1>
     <div class="gallery">
-        <img src="https://placehold.co/300x169" alt="Gambar 1" class="img-16-9">
-        <img src="https://placehold.co/300x169" alt="Gambar 2" class="img-16-9">
-        <img src="https://placehold.co/300x169" alt="Gambar 3" class="img-16-9">
-        <img src="https://placehold.co/300x169" alt="Gambar 4" class="img-16-9">
-        <img src="https://placehold.co/300x169" alt="Gambar 5" class="img-16-9">
+        <img src="https://placehold.co/169x300" alt="Gambar 1" class="img-9-16">
+        <img src="https://placehold.co/169x300" alt="Gambar 2" class="img-9-16">
+        <img src="https://placehold.co/169x300" alt="Gambar 3" class="img-9-16">
+        <img src="https://placehold.co/169x300" alt="Gambar 4" class="img-9-16">
+        <img src="https://placehold.co/169x300" alt="Gambar 5" class="img-9-16">
     </div>
     <img src="https://placehold.co/300x300" alt="Gambar 1:1" class="img-1-1">
-    <p>Jika anda tertarik dengan komunitas kami,silahkan klick tombol di bawah untuk memasuki komunitas kami😉</p>
+    <p>Jika anda tertarik dengan komunitas kami, silahkan klik tombol di bawah untuk memasuki komunitas kami😉</p>
     <a href="https://chat.whatsapp.com/F79Sbh5KxDkL0vMCeO0VUS" class="whatsapp-button">Gabung di WhatsApp</a>
+
+    <!-- Elemen Audio -->
+    <audio controls>
+        <source src="path_to_your_audio_file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
