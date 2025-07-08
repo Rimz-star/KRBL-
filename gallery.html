@@ -21,6 +21,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            padding: 2rem;
         }
 
         h1 {
@@ -31,20 +32,21 @@
 
         .gallery {
             display: flex;
-            flex-wrap: nowrap; /* Mengubah menjadi nowrap untuk berjejeran ke kanan */
-            justify-content: flex-start; /* Mengatur agar gambar berjejer ke kanan */
+            flex-wrap: wrap; /* Mengubah menjadi wrap untuk menampung dua baris */
+            justify-content: center; /* Mengatur agar gambar berjejer di tengah */
             margin: 2rem 0;
-            overflow-x: auto; /* Menambahkan scroll horizontal jika diperlukan */
+            padding: 1rem 0; /* Menambahkan padding atas dan bawah */
         }
 
         .gallery img {
-            margin: 1rem;
+            margin: 0.5rem; /* Mengatur margin horizontal */
             border-radius: 15px;
+            flex: 0 0 auto; /* Mengatur agar gambar tidak menyusut */
         }
 
         .img-9-16 {
-            width: 169px; /* Lebar untuk rasio 9:16 */
-            height: 300px; /* Tinggi untuk rasio 9:16 */
+            width: 120px; /* Lebar untuk rasio 9:16 yang lebih kecil */
+            height: 213px; /* Tinggi untuk rasio 9:16 yang lebih kecil */
             object-fit: cover;
         }
 
@@ -52,6 +54,7 @@
             width: 300px;
             height: 300px;
             object-fit: cover;
+            margin: 2rem 0; /* Menambahkan margin atas dan bawah */
         }
 
         .whatsapp-button {
@@ -61,27 +64,52 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 2rem;
+            margin-top: 1rem;
             transition: background 0.3s;
+            display: inline-flex; /* Menambahkan display inline-flex untuk logo */
+            align-items: center; /* Menyelaraskan logo dan teks */
         }
 
         .whatsapp-button:hover {
             background: #128C7E;
+        }
+
+        audio {
+            margin: 2rem 0; /* Menambahkan margin atas dan bawah untuk audio */
+        }
+
+        .caption {
+            margin-top: 0.5rem; /* Menambahkan margin atas untuk penjelasan */
+            font-size: 0.9rem; /* Ukuran font untuk penjelasan */
+            color: #ccc; /* Warna teks penjelasan */
         }
     </style>
 </head>
 <body>
     <h1>Gallery Kami</h1>
     <div class="gallery">
-        <img src="https://placehold.co/169x300" alt="Gambar 1" class="img-9-16">
-        <img src="https://placehold.co/169x300" alt="Gambar 2" class="img-9-16">
-        <img src="https://placehold.co/169x300" alt="Gambar 3" class="img-9-16">
-        <img src="https://placehold.co/169x300" alt="Gambar 4" class="img-9-16">
-        <img src="https://placehold.co/169x300" alt="Gambar 5" class="img-9-16">
+        <div>
+            <img src="https://placehold.co/169x300" alt="Gambar 1" class="img-9-16">
+            <p class="caption">Penjelasan untuk Gambar 1</p>
+        </div>
+        <div>
+            <img src="https://placehold.co/169x300" alt="Gambar 2" class="img-9-16">
+            <p class="caption">Penjelasan untuk Gambar 2</p>
+        </div>
+        <div>
+            <img src="https://placehold.co/169x300" alt="Gambar 3" class="img-9-16">
+            <p class="caption">Penjelasan untuk Gambar 3</p>
+        </div>
+        <div>
+            <img src="https://placehold.co/169x300" alt="Gambar 4" class="img-9-16">
+            <p class="caption">Penjelasan untuk Gambar 4</p>
+        </div>
     </div>
     <img src="https://placehold.co/300x300" alt="Gambar 1:1" class="img-1-1">
-    <p>Jika anda tertarik dengan komunitas kami, silahkan klik tombol di bawah untuk memasuki komunitas kami😉</p>
-    <a href="https://chat.whatsapp.com/F79Sbh5KxDkL0vMCeO0VUS" class="whatsapp-button">Gabung di WhatsApp</a>
+    <p>Jika Anda tertarik dengan komunitas kami, silakan klik tombol di bawah untuk memasuki komunitas kami😉</p>
+    <a href="https://chat.whatsapp.com/F79Sbh5KxDkL0vMCeO0VUS" class="whatsapp-button">
+        Gabung di WhatsApp
+    </a>
 
     <!-- Elemen Audio -->
     <audio controls>
