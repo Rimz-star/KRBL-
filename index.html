@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Keren</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            opacity: 0; /* Mulai dengan transparan */
+            animation: fadeIn 1.5s ease-in-out forwards; /* Tambahkan animasi fadeIn */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Akhir animasi dengan opacity penuh */
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 4rem 0;
+            animation: slideIn 0.8s ease-in-out forwards; /* Tambahkan animasi slideIn */
+            opacity: 0; /* Mulai dengan transparan */
+            animation-delay: 0.5s; /* Tunda animasi */
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-30px); /* Mulai dari atas */
+                opacity: 0; /* Mulai dengan transparan */
+            }
+            to {
+                transform: translateY(0); /* Akhir di posisi normal */
+                opacity: 1; /* Akhir dengan opacity penuh */
+            }
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 180, 219, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 180, 219, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            flex: 0 0 30%;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0; /* Mulai dengan transparan */
+            animation: fadeIn 0.8s ease-in-out forwards; /* Tambahkan animasi fadeIn */
+            animation-delay: 1s; /* Tunda animasi */
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00b4db;
+        }
+
+        .feature-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .team-section {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            margin-bottom: 1.5rem;
+            color: #00b4db;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .team-category {
+            flex: 0 0 25%;
+            min-width: 200px;
+        }
+
+        .team-category h3 {
+            color: #7fdbff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .team-category p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .feature-card {
+                flex: 0 0 100%;
+            }
+
+            .team-category {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Selamat Datang di Website komunitas Rainbow bubblegem lovers</h1>
+            <p>Tempat berkumpulnya para pecinta Rainbow bubblegem</p>
+            <a href="gallery.html" class="cta-button">Lanjut ke Gallery Akun TikTok kami</a>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <div class="feature-card">
+                <img src="https://files.catbox.moe/f10oic.jpg" alt="Suasana pertemuan komunitas" class="feature-img">
+                <div class="feature-content">
+                    <h3>Komunitas Aktif</h3>
+                    <p>Komunitas kami selalu aktif dengan berbagai kegiatan menarik setiap minggunya, mulai dari diskusi hingga mengedit</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <img src="https://files.catbox.moe/icqvsw.jpg" alt="Mentor menjelaskan materi" class="feature-img">
+                <div class="feature-content">
+                    <h3>Pilih waifu kesukaan kalian</h3>
+                    <p>Kami menyediakan tempat untuk mengobrol/membagikan foto/video rainbow bubblegem</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <img src="https://lann.pw/get-upload?id=uploader-api-1:1752238580261.jpg" alt="Proyek kolaboratif" class="feature-img">
+                <div class="feature-content">
+                    <h3>Proyek Kolaboratif</h3>
+                    <p>Gabung dalam proyek-proyek kolaboratif yang akan meningkatkan skill dan jaringan profesional Anda.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2>Tim Kami</h2>
+            <div class="team-grid">
+                <div class="team-category">
+                    <h3>Owner</h3>
+                    <p>Tian</p>
+                </div>
+                <div class="team-category">
+                    <h3>Wakil</h3>
+                    <p>Rimz, Rey</p>
+                </div>
+                <div class="team-category">
+                    <h3>Moderator</h3>
+                    <p>Will, Yasdar, Jamal</p>
+                </div>
+                <div class="team-category">
+                    <h3>Keamanan</h3>
+                    <p>Rasya, Halim</p>
+                </div>
+                <div class="team-category">
+                    <h3>Editor</h3>
+                    <p>Jamal, Yasdar, Will</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © Dibuat oleh Rimz, Wakil Ketua KRBL
+        </div>
+    </div>
+</body>
+      </html>
+      
