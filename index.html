@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Resmi Komunitas Rainbow Bubblegem Lovers</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* TYPING EFFECT */
+        .typing-caret {
+            border-right: 3px solid white;
+            animation: blink .7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            50.1%, 100% { opacity: 0; }
+        }
+
+        /* header */
+        .header {
+            text-align: center;
+            padding: 4rem 0;
+            animation: slideIn 0.8s ease-in-out forwards;
+            opacity: 0;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,180,219,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,180,219,0.4);
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            flex: 0 0 30%;
+            margin-bottom: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .feature-card:hover { transform: translateY(-10px); }
+
+        .feature-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2f4f7f;
+        }
+
+        .feature-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .team-section {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            margin-bottom: 1.5rem;
+            color: #00b4db;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .team-category {
+            flex: 0 0 25%;
+            min-width: 200px;
+        }
+
+        .team-category h3 {
+            color: #b2e6ce;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .team-category p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .copyright {
+            color: #b2e6ce;
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.2rem; }
+            .feature-card { flex: 0 0 100%; }
+            .team-category { flex: 0 0 100%; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1 id="typingTitle"></h1>
+            <p id="typingDesc"></p>
+            <a href="gallery.html" class="cta-button">Lanjut ke Gallery Akun TikTok kami</a>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features">
+            <div class="feature-card">
+                <img src="komun.jpg" class="feature-img">
+                <div class="feature-content">
+                    <h3>Komunitas Aktif</h3>
+                    <p>Kegiatan diskusi dan edit tiap minggu,banyak juga yang ramah ramah buat di ajak ngobrol.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <img src="waifu.jpg" class="feature-img">
+                <div class="feature-content">
+                    <h3>Pilih Waifu Favorit</h3>
+                    <p>Tempat ngobrol, share foto/video Rainbow Bubblegem.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <img src="collab.jpg" class="feature-img">
+                <div class="feature-content">
+                    <h3>Proyek Kolaboratif</h3>
+                    <p>Gabung dalam project kolaborasi tiap bulan.
+                    kadang kalau menang dapat hadiah berupa fisik looh.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEAM -->
+        <div class="team-section">
+            <h2>Tim Kami</h2>
+
+            <div class="team-grid">
+                <div class="team-category"><h3>Owner</h3><p>Tian</p></div>
+                <div class="team-category"><h3>Wakil</h3><p>Rimz, Rey</p></div>
+                <div class="team-category"><h3>Moderator</h3><p>Will, Yasdar, Jamal</p></div>
+                <div class="team-category"><h3>Keamanan</h3><p>Rasya, Halim</p></div>
+                <div class="team-category"><h3>Editor</h3><p>Jamal, Yasdar, Will</p></div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © Dibuat oleh Rimz, Wakil Owner KRBL
+        </div>
+    </div>
+
+    <!-- TYPING SCRIPT -->
+    <script>
+        const titleText = "Selamat Datang di Komunitas Rainbow Bubblegem Lovers";
+        const descText  = "Tempat berkumpulnya para pecinta Rainbow Bubblegem";
+
+        const titleEl = document.getElementById("typingTitle");
+        const descEl  = document.getElementById("typingDesc");
+
+        let i = 0, j = 0;
+
+        function typeTitle() {
+            if (i < titleText.length) {
+                titleEl.innerHTML = titleText.substring(0, i) + '<span class="typing-caret"></span>';
+                i++;
+                setTimeout(typeTitle, 50);
+            } else {
+                titleEl.innerHTML = titleText; 
+                setTimeout(typeDesc, 400);
+            }
+        }
+
+        function typeDesc() {
+            if (j < descText.length) {
+                descEl.innerHTML = descText.substring(0, j) + '<span class="typing-caret"></span>';
+                j++;
+                setTimeout(typeDesc, 50);
+            } else {
+                descEl.innerHTML = descText;
+            }
+        }
+
+        typeTitle();
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
