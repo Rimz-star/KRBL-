@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* CSS */
+/* CSS umum */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 body {
     background-image: url('background.jpg');
@@ -28,8 +28,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Di belakang konten */
-    pointer-events: none; /* Agar tidak menghalangi klik */
+    z-index: 0; 
+    pointer-events: none;
 }
 
 /* Container utama */
@@ -71,7 +71,31 @@ body {
 .team-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
 .team-category { flex: 0 0 25%; min-width: 200px; }
 .team-category h3 { margin-bottom: 1rem; font-size: 1.2rem; }
-.team-category p { font-size: 0.9rem; line-height: 1.6; }
+.team-category p { font-size: 0.9rem; line-height: 1.6; font-weight: 600; }
+
+/* Gradient bergerak untuk tiap anggota tim */
+@keyframes rainbowMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+.team-category:nth-child(1) p { 
+    background: linear-gradient(270deg, #f8e231, #ff9900); 
+    background-size: 400% 400%; -webkit-background-clip: text; color: transparent; animation: rainbowMove 5s ease infinite;
+}
+.team-category:nth-child(2) p { 
+    background: linear-gradient(270deg, #7fff00, #00ff99); 
+    background-size: 400% 400%; -webkit-background-clip: text; color: transparent; animation: rainbowMove 6s ease infinite;
+}
+.team-category:nth-child(3) p { 
+    background: linear-gradient(270deg, #ff0033, #ff66aa); 
+    background-size: 400% 400%; -webkit-background-clip: text; color: transparent; animation: rainbowMove 7s ease infinite;
+}
+.team-category:nth-child(4) p { 
+    background: linear-gradient(270deg, #5ab0ff, #00ffff); 
+    background-size: 400% 400%; -webkit-background-clip: text; color: transparent; animation: rainbowMove 5.5s ease infinite;
+}
+.team-category:nth-child(5) p { 
+    background: linear-gradient(270deg, #c17cff, #ff99ff); 
+    background-size: 400% 400%; -webkit-background-clip: text; color: transparent; animation: rainbowMove 6.5s ease infinite;
+}
 
 /* Contact */
 .contact-container { background: rgba(0,0,0,0.2); padding: 2rem; margin: 4rem 0; border-radius: 15px; text-align: center; opacity: 0; animation: fadeIn 0.8s ease-in-out forwards; animation-delay: 1.5s; position: relative; z-index: 1; }
@@ -85,7 +109,13 @@ body {
 /* Copyright */
 .copyright { color: #b2e6ce; text-align: center; margin-top: 3rem; padding: 1rem 0; font-size: 0.9rem; }
 
-@media (max-width: 768px) { .header h1 { font-size: 2.2rem; } .feature-card { flex: 0 0 100%; } .team-category { flex: 0 0 100%; } .visi-misi-container.zoomed { transform: scale(1.05); } .contact-item { flex: 0 0 100%; } }
+@media (max-width: 768px) { 
+    .header h1 { font-size: 2.2rem; } 
+    .feature-card { flex: 0 0 100%; } 
+    .team-category { flex: 0 0 100%; } 
+    .visi-misi-container.zoomed { transform: scale(1.05); } 
+    .contact-item { flex: 0 0 100%; } 
+}
 </style>
 </head>
 <body>
