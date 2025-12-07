@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Resmi Komunitas Rainbow Bubblegem Lovers</title>
 
+    <!-- FONT POPPINS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME (untuk icon sosial) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         /* CSS */
@@ -18,10 +22,10 @@
 
         body {
             background-image: url('background.jpg');
-            background-size: cover; /* Agar gambar menutupi seluruh area tanpa distorsi */
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed; /* Agar background tetap saat scroll dan tidak memanjang/melebar */
+            background-attachment: fixed;
         }
 
         @keyframes fadeIn { to { opacity: 1; } }
@@ -60,7 +64,7 @@
         .header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3); /* Gradien rainbow untuk warna warni */
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -137,7 +141,7 @@
             opacity: 0.9;
         }
 
-        /* CSS untuk Container Visi dan Misi dengan Zoom yang Lebih Halus */
+        /* VISI MISI */
         .visi-misi-container {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -145,18 +149,18 @@
             margin: 4rem 0;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.5s ease, box-shadow 0.5s ease; /* Animasi smooth untuk zoom */
-            transform: scale(1); /* Ukuran normal */
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            transform: scale(1);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer; /* Menunjukkan bahwa elemen bisa diklik */
+            cursor: pointer;
             opacity: 0;
             animation: fadeIn 0.8s ease-in-out forwards;
-            animation-delay: 1s; /* Delay agar muncul setelah elemen lain */
+            animation-delay: 1s;
         }
 
         .visi-misi-container.zoomed {
-            transform: scale(1.1); /* Zoom in: perbesar 10% (lebih halus) */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Bayangan lebih kuat saat zoom */
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
         .visi-misi-container h2 {
@@ -192,15 +196,15 @@
             font-size: 0.95rem;
         }
 
-        /* Styling khusus untuk teks "Rainbow Bubblegem" agar sesuai dengan tema (gradien rainbow) */
         .rainbow-text {
             background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-weight: 600; /* Agar lebih menonjol */
+            font-weight: 600;
         }
 
+        /* TEAM */
         .team-section {
             background: rgba(0, 0, 0, 0.2);
             padding: 2rem;
@@ -236,14 +240,13 @@
             line-height: 1.6;
         }
 
-        /* WARNA <p> KHUSUS UNTUK NAMA TIM */
-        .team-category:nth-child(1) p { color: #f8e231; }   /* Tian */
-        .team-category:nth-child(2) p { color: #7fff00; }   /* Rimz */
-        .team-category:nth-child(3) p { color: #ff0033; }   /* Will, Yasdar, Jamal */
-        .team-category:nth-child(4) p { color: #5ab0ff; }   /* Rasya, Halim */
-        .team-category:nth-child(5) p { color: #c17cff; }   /* Jamal, Yasdar, Will */
+        .team-category:nth-child(1) p { color: #f8e231; }
+        .team-category:nth-child(2) p { color: #7fff00; }
+        .team-category:nth-child(3) p { color: #ff0033; }
+        .team-category:nth-child(4) p { color: #5ab0ff; }
+        .team-category:nth-child(5) p { color: #c17cff; }
 
-        /* CSS untuk Container Contact Me */
+        /* CONTACT */
         .contact-container {
             background: rgba(0, 0, 0, 0.2);
             padding: 2rem;
@@ -252,7 +255,7 @@
             text-align: center;
             opacity: 0;
             animation: fadeIn 0.8s ease-in-out forwards;
-            animation-delay: 1.5s; /* Delay agar muncul setelah elemen lain */
+            animation-delay: 1.5s;
         }
 
         .contact-container h2 {
@@ -307,14 +310,47 @@
             font-size: 0.9rem;
         }
 
+        /* SOCIAL ICONS */
+        .social-icons {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 2rem;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+        }
+
+        .whatsapp-icon:hover { color: #25D366; box-shadow: 0 0 20px #25D366; }
+        .tiktok-icon:hover { color: #ff0050; box-shadow: 0 0 20px #ff0050; }
+        .telegram-icon:hover { color: #0088cc; box-shadow: 0 0 20px #0088cc; }
+
         @media (max-width: 768px) {
             .header h1 { font-size: 2.2rem; }
             .feature-card { flex: 0 0 100%; }
             .team-category { flex: 0 0 100%; }
-            .visi-misi-container.zoomed {
-                transform: scale(1.05); /* Zoom lebih kecil di mobile agar tidak overflow dan lebih halus */
-            }
+            .visi-misi-container.zoomed { transform: scale(1.05); }
             .contact-item { flex: 0 0 100%; }
+            .social-icon { width: 60px; height: 60px; font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -335,7 +371,7 @@
                 <img src="komun.jpg" class="feature-img">
                 <div class="feature-content">
                     <h3>Komunitas Aktif</h3>
-                    <p>Kegiatan diskusi dan edit tiap minggu,banyak juga yang ramah ramah buat di ajak ngobrol.</p>
+                    <p>Kegiatan diskusi dan edit tiap minggu, banyak juga yang ramah ramah buat diajak ngobrol.</p>
                 </div>
             </div>
 
@@ -351,8 +387,7 @@
                 <img src="collab.jpg" class="feature-img">
                 <div class="feature-content">
                     <h3>Proyek Kolaboratif</h3>
-                    <p>Gabung dalam project kolaborasi tiap 3 bulan.
-                    kadang kalau menang dapat hadiah berupa fisik looh.</p>
+                    <p>Gabung dalam project kolaborasi tiap 3 bulan. Kadang kalau menang dapat hadiah berupa fisik looh.</p>
                 </div>
             </div>
         </div>
@@ -390,18 +425,22 @@
             </div>
         </div>
 
-    <!-- Ikon sosial untuk WhatsApp dan TikTok -->
-    <div class="social-icons">
-        <a href="https://chat.whatsapp.com/B6QfPFaBkP39HCCaQWwul8?mode=hqrc" class="social-icon whatsapp-icon" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://www.tiktok.com/@editor.krbl?_r=1&_t=ZS-921LNjbTC3Y" class="social-icon tiktok-icon" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="t.me/8896707" class="sosial-icon telegram-icon" aria-label="Telegram">
-            <i class="fab- fa-telegram"></i>
-        </a>
-    </div>
+        <!-- IKON SOSIAL -->
+        <div class="social-icons">
+            <a href="https://chat.whatsapp.com/B6QfPFaBkP39HCCaQWwul8?mode=hqrc" class="social-icon whatsapp-icon" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@editor.krbl?_r=1&_t=ZS-921LNjbTC3Y" class="social-icon tiktok-icon" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="https://t.me/8896707" class="social-icon telegram-icon" aria-label="Telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
 
     </div>
-</div>
+
+</body>
+</html>
