@@ -40,28 +40,7 @@
             margin: 2rem 0;
             font-size: 2.5rem;
             color: #00b4db;
-            border-right: 2px solid #00b4db; /* Cursor untuk efek typing */
-            white-space: nowrap; 
-            overflow: hidden; 
-            animation: typing 3s steps(25, end) forwards, blink-caret 0.75s step-end infinite; /* Animasi typing dan blink */
-        }
-
-        @keyframes typing {
-            from {
-                width: 0; /* Mulai dari lebar 0 */
-            }
-            to {
-                width: 100%; /* Sampai lebar penuh */
-            }
-        }
-
-        @keyframes blink-caret {
-            from, to {
-                border-color: transparent; /* Hilangkan border untuk blink */
-            }
-            50% {
-                border-color: #00b4db; /* Tampilkan border */
-            }
+            /* Hapus animasi CSS typing, gunakan JS */
         }
 
         .gallery {
@@ -280,7 +259,7 @@
     </style>
 </head>
 <body>
-    <h1>Gallery Akun Tiktok Kami</h1>
+    <h1 id="typingTitle"></h1>
     <div class="gallery">
         <div>
             <div class="aspect-ratio-9-16">
@@ -329,7 +308,7 @@
         </a>
     </div>
 
-    <!-- Elemen Audio dengan tampilan widget Spotify iOS 18 -->
+    <!-- Audio -->
     <div class="audio-widget">
         <img src="ngapainrepot.jpg" alt="Cover" class="cover">
         <div class="audio-info">
@@ -343,6 +322,24 @@
     </div>
 
     <script>
+        // Efek typing untuk h1
+        const titleText = "Gallery Akun Tiktok Kami";
+        const titleEl = document.getElementById("typingTitle");
+
+        let i = 0;
+
+        function typeTitle() {
+            if (i < titleText.length) {
+                titleEl.innerHTML = titleText.substring(0, i) + '<span class="typing-caret" style="border-right: 3px solid #00b4db; animation: blink 0.7s infinite;"></span>';
+                i++;
+                setTimeout(typeTitle, 50);
+            } else {
+                titleEl.innerHTML = titleText; // Hapus cursor setelah selesai
+            }
+        }
+
+        typeTitle();
+
         // Ambil semua elemen audio
         const audioWidgets = document.querySelectorAll('.audio-widget audio');
 
@@ -360,4 +357,3 @@
     </script>
 </body>
 </html>
-
