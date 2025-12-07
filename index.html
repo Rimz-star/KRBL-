@@ -137,6 +137,62 @@
             opacity: 0.9;
         }
 
+        /* CSS untuk Container Visi dan Misi dengan Zoom */
+        .visi-misi-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 4rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease; /* Animasi smooth untuk zoom */
+            transform: scale(1); /* Ukuran normal */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer; /* Menunjukkan bahwa elemen bisa diklik */
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+            animation-delay: 1s; /* Delay agar muncul setelah elemen lain */
+        }
+
+        .visi-misi-container.zoomed {
+            transform: scale(1.2); /* Zoom in: perbesar 20% */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Bayangan lebih kuat saat zoom */
+        }
+
+        .visi-misi-container h2 {
+            text-align: center;
+            color: #e1e8f0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .visi-misi-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .visi, .misi {
+            flex: 1 1 45%;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .visi h3, .misi h3 {
+            color: #00b4db;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .visi p, .misi p {
+            color: white;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
         .team-section {
             background: rgba(0, 0, 0, 0.2);
             padding: 2rem;
@@ -191,6 +247,9 @@
             .header h1 { font-size: 2.2rem; }
             .feature-card { flex: 0 0 100%; }
             .team-category { flex: 0 0 100%; }
+            .visi-misi-container.zoomed {
+                transform: scale(1.1); /* Zoom lebih kecil di mobile agar tidak overflow */
+            }
         }
     </style>
 </head>
@@ -227,8 +286,28 @@
                 <img src="collab.jpg" class="feature-img">
                 <div class="feature-content">
                     <h3>Proyek Kolaboratif</h3>
-                    <p>Gabung dalam project kolaborasi tiap bulan.
+                    <p>Gabung dalam project kolaborasi tiap 3 bulan.
                     kadang kalau menang dapat hadiah berupa fisik looh.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VISI DAN MISI -->
+        <div class="visi-misi-container" id="visiMisi">
+            <h2>Visi dan Misi Komunitas Rainbow Bubblegem Lovers</h2>
+            <div class="visi-misi-content">
+                <div class="visi">
+                    <h3>Visi</h3>
+                    <p>Menjadi komunitas terbesar dan teraktif untuk para pecinta Rainbow Bubblegem, yang mendorong kreativitas, kolaborasi, dan persahabatan di dunia digital.</p>
+                </div>
+                <div class="misi">
+                    <h3>Misi</h3>
+                    <p>
+                        - Mengadakan diskusi tentang Rainbow Bubblegem.<br>
+                        - Membagikan/membuat konten kreatif seperti edit video tentang Rainbow Bublegem.<br>
+                        - Menjalankan proyek kolaborasi bulanan dengan hadiah menarik.<br>
+                        - Mendorong interaksi positif dan ramah di antara anggota.
+                    </p>
                 </div>
             </div>
         </div>
@@ -274,7 +353,7 @@
 
         function typeDesc() {
             if (j < descText.length) {
-                descEl.innerHTML = descText.substring(0, j) + '<span class="typing-ccaret"></span>';
+                descEl.innerHTML = descText.substring(0, j) + '<span class="typing-caret"></span>'; 
                 j++;
                 setTimeout(typeDesc, 50);
             } else {
@@ -283,6 +362,17 @@
         }
 
         typeTitle();
+    </script>
+
+    <!-- SCRIPT UNTUK ZOOM VISI MISI -->
+    <script>
+        // Script untuk efek zoom pada container visi dan misi
+        const visiMisiContainer = document.getElementById('visiMisi');
+
+        visiMisiContainer.addEventListener('click', function() {
+            // Toggle class 'zoomed' untuk efek zoom in/out
+            this.classList.toggle('zoomed');
+        });
     </script>
 
     <script type="module" src="script.js"></script>
