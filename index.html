@@ -18,9 +18,10 @@
 
         body {
             background-image: url('background.jpg');
-            background-size: cover;
+            background-size: cover; /* Agar gambar menutupi seluruh area tanpa distorsi */
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed; /* Agar background tetap saat scroll dan tidak memanjang/melebar */
         }
 
         @keyframes fadeIn { to { opacity: 1; } }
