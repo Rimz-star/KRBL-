@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tambahkan link Font Awesome untuk ikon sosial -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -178,10 +180,45 @@
             font-size: 0.9rem; /* Ukuran font untuk penjelasan */
             color: #ADD8E6; /* Warna teks penjelasan */
         }
+
+        /* CSS untuk ikon sosial (WhatsApp dan TikTok) */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* Jarak antara ikon */
+            margin: 2rem 0;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px; /* Ukuran ikon */
+            height: 50px;
+            border-radius: 50%; /* Membuat bulat */
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem; /* Ukuran ikon */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1); /* Efek zoom saat hover */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .whatsapp-icon {
+            background: linear-gradient(45deg, #25D366, #128C7E); /* Gradien hijau untuk WhatsApp */
+        }
+
+        .tiktok-icon {
+            background: linear-gradient(45deg, #000000, #69C9D0); /* Gradien hitam dan biru untuk TikTok */
+        }
     </style>
 </head>
 <body>
-<h1>Gallery Akun Tiktok Kami</h1>
+    <h1>Gallery Akun Tiktok Kami</h1>
     <div class="gallery">
         <div>
             <img src="Akun Tiktok Tianmybub.png" alt="Gambar 1" class="img-9-16">
@@ -206,18 +243,22 @@
         <div>
             <p class="caption">Jika kalian mau akun Tiktok kalian di post di web,maka masuklah ke komunitas kami,kami akan menunggu kehadiran mu😊</p>
         </div>
-   </div>
-    <img src="Gambar.jpg" alt="Gambar 1:1" class="img-1-1"> komunitas kami😉</p>
-    <a href="https://chat.whatsapp.com/F79Sbh5KxDkL0vMCeO0VUS" class="sosial-icon" aria-label="whatsapp"> 
-        <i class="fa-brands fa-whatsapp"></i>
     </div>
+    <img src="Gambar.jpg" alt="Gambar 1:1" class="img-1-1">
+    <p>komunitas kami😉</p>
+    
+    <!-- Ikon sosial untuk WhatsApp dan TikTok -->
+    <div class="social-icons">
+        <a href="https://chat.whatsapp.com/F79Sbh5KxDkL0vMCeO0VUS" class="social-icon whatsapp-icon" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.tiktok.com/@yourusername" class="social-icon tiktok-icon" aria-label="TikTok"> <!-- Ganti dengan tautan TikTok yang sesuai -->
+            <i class="fab fa-tiktok"></i>
+        </a>
     </div>
-    </div>
-    <p>Jika Anda tertarik dengan komunitas kami, silakan klik tombol di atas ini untuk memasuki
-    </a>
-    <div>
-    </div>
-</p> Playlist lagu kesukaan atmin🗿</p>
+    
+    <p>Jika Anda tertarik dengan komunitas kami, silakan klik tombol di atas ini untuk memasuki</p>
+    <p>Playlist lagu kesukaan atmin🗿</p>
 
     <!-- Elemen Audio dengan tampilan widget Spotify iOS 18 -->
     <div class="audio-widget">
@@ -249,5 +290,4 @@
         });
     </script>
 </body>
-  </html>
-  
+</html>
