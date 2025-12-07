@@ -16,7 +16,9 @@
         }
 
         body {
-            background: linear-gradient(135deg, #2e865f, #0077be, #87ceeb);
+            background: url('background.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            background-attachment: fixed; 
             color: #00CCFF;
             min-height: 100vh;
             display: flex;
@@ -38,19 +40,27 @@
             margin: 2rem 0;
             font-size: 2.5rem;
             color: #00b4db;
-            animation: slideIn 0.5s ease forwards; /* Tambahkan animasi slideIn */
-            opacity: 0; /* Mulai dengan transparan */
-            animation-delay: 0.5s; /* Tunda animasi */
+            border-right: 2px solid #00b4db; /* Cursor untuk efek typing */
+            white-space: nowrap; 
+            overflow: hidden; 
+            animation: typing 3s steps(25, end) forwards, blink-caret 0.75s step-end infinite; /* Animasi typing dan blink */
         }
 
-        @keyframes slideIn {
+        @keyframes typing {
             from {
-                transform: translateY(-20px); /* Mulai dari atas */
-                opacity: 0; /* Mulai dengan transparan */
+                width: 0; /* Mulai dari lebar 0 */
             }
             to {
-                transform: translateY(0); /* Akhir di posisi normal */
-                opacity: 1; /* Akhir dengan opacity penuh */
+                width: 100%; /* Sampai lebar penuh */
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent; /* Hilangkan border untuk blink */
+            }
+            50% {
+                border-color: #00b4db; /* Tampilkan border */
             }
         }
 
@@ -86,19 +96,33 @@
         }
 
         .gallery img {
-            border-radius: 15px; /* Membuat sudut membulat pada gambar */
+            border-radius: 15px; 
             flex: 0 0 auto; /* Mengatur agar gambar tidak menyusut */
         }
 
-        .img-9-16 {
-            width: 120px; /* Lebar untuk rasio 9:16 yang lebih kecil */
-            height: 213px; /* Tinggi untuk rasio 9:16 yang lebih kecil */
-            object-fit: cover;
+        /* Container untuk aspect ratio 9:16 */
+        .aspect-ratio-9-16 {
+            position: relative;
+            width: 120px; /* Lebar tetap */
+            height: 0;
+            padding-bottom: calc(16 / 9 * 120px); /* Tinggi = (16/9)*120 ≈ 213.33px untuk rasio 9:16 */
+            overflow: hidden; /* Pastikan gambar tidak keluar dari container */
+            border-radius: 15px; /* Sudut membulat sesuai gambar */
             transition: transform 0.3s ease; /* Transisi halus saat hover */
         }
 
-        .img-9-16:hover {
+        .aspect-ratio-9-16:hover {
             transform: scale(1.1); /* Efek zoom saat hover */
+        }
+
+        .aspect-ratio-9-16 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Mempertahankan rasio tanpa distorsi */
+            border-radius: 15px; /* Sudut membulat */
         }
 
         .img-1-1 {
@@ -106,6 +130,32 @@
             height: 300px;
             object-fit: cover;
             margin: 2rem 0; /* Menambahkan margin atas dan bawah */
+            border-radius: 20px; /* Sudut lebih membulat untuk lebih menarik */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Bayangan lebih dramatis */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk hover */
+            position: relative; /* Untuk efek overlay */
+        }
+
+        .img-1-1:hover {
+            transform: scale(1.05) rotate(2deg); /* Zoom dan sedikit rotasi saat hover */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7); /* Bayangan lebih besar */
+        }
+
+        .img-1-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 204, 255, 0.2), rgba(0, 180, 219, 0.2)); /* Overlay gradien biru transparan */
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .img-1-1:hover::before {
+            opacity: 1; /* Tampilkan overlay saat hover */
         }
 
         .whatsapp-button {
@@ -233,23 +283,33 @@
     <h1>Gallery Akun Tiktok Kami</h1>
     <div class="gallery">
         <div>
-            <img src="Akun Tiktok Tianmybub.png" alt="Gambar 1" class="img-9-16">
+            <div class="aspect-ratio-9-16">
+                <img src="Akun Tiktok Tianmybub.png" alt="Gambar 1">
+            </div>
             <p class="caption">Akun Tiktok :Admin<br>Pemilik. : Tiann<br>Status. : Masih Aktif</p>
         </div>
         <div>
-            <img src="Akun Tiktok Rimzz.png" alt="Gambar 1" class="img-9-16">
+            <div class="aspect-ratio-9-16">
+                <img src="Akun Tiktok Rimzz.png" alt="Gambar 1">
+            </div>
             <p class="caption">Akun Tiktok :Admin<br>Pemilik. : Rimzz<br>Status. : Aktif</p>
         </div>
         <div> 
-            <img src="Akun Tiktok Will.png" alt="Gambar 1" class="img-9-16">
+            <div class="aspect-ratio-9-16">
+                <img src="Akun Tiktok Will.png" alt="Gambar 1">
+            </div>
             <p class="caption">Akun Tiktok :Admin<br>Pemilik. :Will<br>Status. :Aktif</p>
         </div>
         <div>
-            <img src="Akun YouTube yasdar.png" alt="Gambar 1" class="img-9-16">
+            <div class="aspect-ratio-9-16">
+                <img src="Akun YouTube yasdar.png" alt="Gambar 1">
+            </div>
             <p class="caption">Akun YouTube :Admin<br>Pemilik. :Yasdar<br>Status. :Aktif</p>
         </div>
         <div>
-            <img src="Akun Tiktok Halim.png" alt="Gambar 1" class="img-9-16">
+            <div class="aspect-ratio-9-16">
+                <img src="Akun Tiktok Halim.png" alt="Gambar 1">
+            </div>
             <p class="caption">Akun Tiktok :Admin<br>Pemilik. :Halim<br>Status. :Aktif</p>
         </div>
         <div>
@@ -300,3 +360,4 @@
     </script>
 </body>
 </html>
+
