@@ -60,7 +60,7 @@
         .header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, #00b4db, #0083b0);
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3); /* Gradien rainbow untuk warna warni */
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -137,7 +137,7 @@
             opacity: 0.9;
         }
 
-        /* CSS untuk Container Visi dan Misi dengan Zoom */
+        /* CSS untuk Container Visi dan Misi dengan Zoom yang Lebih Halus */
         .visi-misi-container {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -155,13 +155,12 @@
         }
 
         .visi-misi-container.zoomed {
-            transform: scale(1.2); /* Zoom in: perbesar 20% */
+            transform: scale(1.1); /* Zoom in: perbesar 10% (lebih halus) */
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Bayangan lebih kuat saat zoom */
         }
 
         .visi-misi-container h2 {
             text-align: center;
-            color: #e1e8f0;
             margin-bottom: 1.5rem;
             font-size: 2rem;
         }
@@ -191,6 +190,15 @@
             color: white;
             line-height: 1.6;
             font-size: 0.95rem;
+        }
+
+        /* Styling khusus untuk teks "Rainbow Bubblegem" agar sesuai dengan tema (gradien rainbow) */
+        .rainbow-text {
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600; /* Agar lebih menonjol */
         }
 
         .team-section {
@@ -248,7 +256,7 @@
             .feature-card { flex: 0 0 100%; }
             .team-category { flex: 0 0 100%; }
             .visi-misi-container.zoomed {
-                transform: scale(1.1); /* Zoom lebih kecil di mobile agar tidak overflow */
+                transform: scale(1.05); /* Zoom lebih kecil di mobile agar tidak overflow dan lebih halus */
             }
         }
     </style>
@@ -294,17 +302,17 @@
 
         <!-- VISI DAN MISI -->
         <div class="visi-misi-container" id="visiMisi">
-            <h2>Visi dan Misi Komunitas Rainbow Bubblegem Lovers</h2>
+            <h2 class="rainbow-text">Visi dan Misi Komunitas Rainbow Bubblegem Lovers</h2>
             <div class="visi-misi-content">
                 <div class="visi">
                     <h3>Visi</h3>
-                    <p>Menjadi komunitas terbesar dan teraktif untuk para pecinta Rainbow Bubblegem, yang mendorong kreativitas, kolaborasi, dan persahabatan di dunia digital.</p>
+                    <p>Menjadi komunitas terbesar dan teraktif untuk para pecinta <span class="rainbow-text">Rainbow Bubblegem</span>, yang mendorong kreativitas, kolaborasi, dan persahabatan di dunia digital.</p>
                 </div>
                 <div class="misi">
                     <h3>Misi</h3>
                     <p>
-                        - Mengadakan diskusi tentang Rainbow Bubblegem.<br>
-                        - Membagikan/membuat konten kreatif seperti edit video tentang Rainbow Bublegem.<br>
+                        - Mengadakan diskusi tentang <span class="rainbow-text">Rainbow Bubblegem</span>.<br>
+                        - Membagikan/membuat konten kreatif seperti edit video tentang <span class="rainbow-text">Rainbow Bubblegem</span>.<br>
                         - Menjalankan proyek kolaborasi bulanan dengan hadiah menarik.<br>
                         - Mendorong interaksi positif dan ramah di antara anggota.
                     </p>
