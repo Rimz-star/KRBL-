@@ -7,13 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body {
             background: url('background galery.jpg') no-repeat center center fixed; 
             background-size: cover; 
@@ -30,228 +24,44 @@
             position: relative;
             z-index: 1;
         }
+        @keyframes fadeIn { to { opacity: 1; } }
+        h1 { margin: 2rem 0; font-size: 2.5rem; color: #00b4db; }
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; margin: 2rem 0; padding: 1rem 0; position: relative; z-index: 1; }
+        .gallery div { margin: 0.5rem; transition: transform 0.3s ease; opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 0.5s; }
+        @keyframes fadeInUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .gallery div:hover { transform: scale(1.05); }
+        .gallery img { border-radius: 15px; flex: 0 0 auto; }
+        .aspect-ratio-9-16 { position: relative; width: 120px; height: 0; padding-bottom: calc(16 / 9 * 120px); overflow: hidden; border-radius: 15px; transition: transform 0.3s ease; }
+        .aspect-ratio-9-16:hover { transform: scale(1.1); }
+        .aspect-ratio-9-16 img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+        .img-1-1 { width: 300px; height: 300px; object-fit: cover; margin: 2rem 0; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .img-1-1:hover { transform: scale(1.05) rotate(2deg); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7); }
+        .img-1-1::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(0,204,255,0.2), rgba(0,180,219,0.2)); border-radius: 20px; opacity: 0; transition: opacity 0.3s ease; }
+        .img-1-1:hover::before { opacity: 1; }
+        .caption { margin-top: 0.5rem; font-size: 0.9rem; color: #ADD8E6; background: rgba(0, 204, 255, 0.1); border: 2px solid #00CCFF; border-radius: 10px; padding: 0.5rem; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; }
+        .caption:active { transform: scale(0.95); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); }
+        .social-icons { display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; position: relative; z-index: 1; }
+        .social-icon { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; text-decoration: none; color: white; font-size: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .social-icon:hover { transform: scale(1.1); box-shadow: 0 6px 15px rgba(0,0,0,0.5); }
+        .whatsapp-icon { background: linear-gradient(45deg, #25D366, #128C7E); }
+        .tiktok-icon { background: linear-gradient(45deg, #000000, #69C9D0); }
+        .audio-widget { width: 100%; max-width: 600px; background: #1c1c1c; border-radius: 10px; padding: 1rem; display: flex; align-items: center; justify-content: flex-start; margin: 2rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.5); position: relative; opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 1s; z-index: 1; }
+        .audio-widget .cover { width: 80px; height: 80px; border-radius: 5px; margin-right: 1rem; }
+        .audio-widget .audio-info { flex-grow: 1; text-align: left; }
+        .audio-widget .audio-info h3 { margin: 0; font-size: 1.2rem; color: #ADD8E6; }
+        .audio-widget .audio-info p { margin: 0; font-size: 0.9rem; color: #87CEEB; }
+        audio { width: 100%; background: transparent; border: none; margin-top: 0.5rem; }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        h1 {
-            margin: 2rem 0;
-            font-size: 2.5rem;
-            color: #00b4db;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 2rem 0;
-            padding: 1rem 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .gallery div {
-            margin: 0.5rem;
-            transition: transform 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.5s ease forwards;
-            animation-delay: 0.5s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .gallery div:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery img {
-            border-radius: 15px; 
-            flex: 0 0 auto;
-        }
-
-        .aspect-ratio-9-16 {
-            position: relative;
-            width: 120px;
-            height: 0;
-            padding-bottom: calc(16 / 9 * 120px);
-            overflow: hidden;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .aspect-ratio-9-16:hover {
-            transform: scale(1.1);
-        }
-
-        .aspect-ratio-9-16 img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .img-1-1 {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            margin: 2rem 0;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .img-1-1:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-        }
-
-        .img-1-1::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(0, 204, 255, 0.2), rgba(0, 180, 219, 0.2));
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .img-1-1:hover::before {
-            opacity: 1;
-        }
-
-        .caption {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: #ADD8E6;
-            background: rgba(0, 204, 255, 0.1);
-            border: 2px solid #00CCFF;
-            border-radius: 10px;
-            padding: 0.5rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: pointer;
-        }
-
-        .caption:active {
-            transform: scale(0.95);
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-decoration: none;
-            color: white;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .whatsapp-icon {
-            background: linear-gradient(45deg, #25D366, #128C7E);
-        }
-
-        .tiktok-icon {
-            background: linear-gradient(45deg, #000000, #69C9D0);
-        }
-
-        .audio-widget {
-            width: 100%;
-            max-width: 600px;
-            background: #1c1c1c;
-            border-radius: 10px;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin: 2rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            position: relative;
-            opacity: 0;
-            animation: fadeInUp 0.5s ease forwards;
-            animation-delay: 1s;
-            z-index: 1;
-        }
-
-        .audio-widget .cover {
-            width: 80px;
-            height: 80px;
-            border-radius: 5px;
-            margin-right: 1rem;
-        }
-
-        .audio-widget .audio-info {
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        .audio-widget .audio-info h3 {
-            margin: 0;
-            font-size: 1.2rem;
-            color: #ADD8E6;
-        }
-
-        .audio-widget .audio-info p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #87CEEB;
-        }
-
-        audio {
-            width: 100%;
-            background: transparent;
-            border: none;
-            margin-top: 0.5rem;
-        }
-
-        /* Canvas awan */
+        /* Canvas awan pelangi */
         #cloud-canvas {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:0;
+            pointer-events:none;
         }
-
     </style>
 </head>
 <body>
@@ -328,9 +138,7 @@
             titleEl.innerHTML = titleText.substring(0, i) + '<span class="typing-caret" style="border-right: 3px solid #00b4db; animation: blink 0.7s infinite;"></span>';
             i++;
             setTimeout(typeTitle, 50);
-        } else {
-            titleEl.innerHTML = titleText;
-        }
+        } else { titleEl.innerHTML = titleText; }
     }
     typeTitle();
 
@@ -348,13 +156,16 @@
     });
 
     // --------------------------
-    // CLOUD SCRIPT
+    // CLOUD RAINBOW SCRIPT
     // --------------------------
     const cloudCanvas = document.getElementById('cloud-canvas');
     const cloudCtx = cloudCanvas.getContext('2d');
     cloudCanvas.width = window.innerWidth;
     cloudCanvas.height = window.innerHeight;
+
     let clouds = [];
+    const rainbowColors = ['rgba(255,0,0,0.2)','rgba(255,127,0,0.2)','rgba(255,255,0,0.2)','rgba(0,255,0,0.2)','rgba(0,0,255,0.2)','rgba(75,0,130,0.2)','rgba(148,0,211,0.2)'];
+
     class Cloud {
         constructor() {
             this.x = Math.random() * cloudCanvas.width;
@@ -362,15 +173,15 @@
             this.width = 200 + Math.random() * 300;
             this.height = 80 + Math.random() * 50;
             this.speed = 0.2 + Math.random() * 0.5;
-            this.opacity = 0.1 + Math.random() * 0.2;
+            this.color = rainbowColors[Math.floor(Math.random()*rainbowColors.length)];
         }
         draw() {
-            const gradient = cloudCtx.createRadialGradient(this.x, this.y, this.height / 4, this.x, this.y, this.width / 2);
-            gradient.addColorStop(0, `rgba(255,255,255,${this.opacity})`);
+            const gradient = cloudCtx.createRadialGradient(this.x, this.y, this.height/4, this.x, this.y, this.width/2);
+            gradient.addColorStop(0, this.color);
             gradient.addColorStop(1, 'rgba(255,255,255,0)');
             cloudCtx.fillStyle = gradient;
             cloudCtx.beginPath();
-            cloudCtx.ellipse(this.x, this.y, this.width, this.height, 0, 0, Math.PI * 2);
+            cloudCtx.ellipse(this.x, this.y, this.width, this.height, 0, 0, Math.PI*2);
             cloudCtx.fill();
         }
         update() {
@@ -382,24 +193,13 @@
             this.draw();
         }
     }
-    function initClouds() {
-        clouds = [];
-        for(let i = 0; i < 15; i++) {
-            clouds.push(new Cloud());
-        }
-    }
-    function animateClouds() {
-        cloudCtx.clearRect(0, 0, cloudCanvas.width, cloudCanvas.height);
-        clouds.forEach(cloud => cloud.update());
-        requestAnimationFrame(animateClouds);
-    }
-    window.addEventListener('resize', () => {
-        cloudCanvas.width = window.innerWidth;
-        cloudCanvas.height = window.innerHeight;
-        initClouds();
-    });
+
+    function initClouds() { clouds=[]; for(let i=0;i<20;i++){ clouds.push(new Cloud()); } }
+    function animateClouds() { cloudCtx.clearRect(0,0,cloudCanvas.width,cloudCanvas.height); clouds.forEach(c=>c.update()); requestAnimationFrame(animateClouds); }
+    window.addEventListener('resize',()=>{ cloudCanvas.width=window.innerWidth; cloudCanvas.height=window.innerHeight; initClouds(); });
     initClouds();
     animateClouds();
+
 </script>
 
 </body>
