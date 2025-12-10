@@ -162,7 +162,7 @@ body {
 
 <!-- HEADER -->
 <div class="header">
-    <h1 id="typingTitle">Rainbow Bubblegem Lovers</h1>
+    <h1 id="typingTitle"></h1>
     <p id="typingDesc">Tempat Berkumpulnya Para Pecinta Rainbow Bubblegem.</p>
     <div class="cta-buttons">
         <a href="gallery.html" class="cta-button">Galery Akun Tiktok</a>
@@ -236,6 +236,24 @@ body {
 </div>
 
 <script>
+// Typing Effect untuk h1
+const typingTitle = document.getElementById('typingTitle');
+const text = "Rainbow Bubblegem Lovers";
+let index = 0;
+
+function typeWriter() {
+    if (index < text.length) {
+        typingTitle.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 150); // Kecepatan typing (ms per karakter)
+    }
+}
+
+// Mulai typing effect setelah halaman load
+window.addEventListener('load', () => {
+    typeWriter();
+});
+
 // Bubble Particles
 const canvas = document.getElementById('bubble-canvas');
 const ctx = canvas.getContext('2d');
