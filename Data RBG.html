@@ -8,11 +8,10 @@
         body {
             font-family: Arial, sans-serif;
             background-image: url('background.jpg');
-            background-size: contain; /* Menggunakan contain untuk menjaga rasio 9:16 tanpa distorsi */
+            background-size: cover; /* Menggunakan cover untuk mengisi seluruh layar tanpa ruang kosong, tetap proporsional */
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-color: black; /* Warna latar untuk area kosong jika rasio layar berbeda */
+            background-attachment: fixed; /* Background tetap saat scroll */
             margin: 0;
             padding: 20px;
             position: relative;
