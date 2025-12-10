@@ -8,67 +8,79 @@
         body {
             font-family: Arial, sans-serif;
             background-image: url('background Data.jpg');
-            background-size: cover; /* Menggunakan cover untuk mengisi seluruh layar tanpa ruang kosong, tetap proporsional */
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed; /* Background tetap saat scroll */
+            background-attachment: fixed;
             margin: 0;
             padding: 20px;
-            position: relative;
             overflow-x: hidden;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            /* Menghapus background putih semi-transparan */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
         h1 {
             text-align: center;
             margin-bottom: 40px;
             background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
             -webkit-background-clip: text;
-            background-clip: text;
             color: transparent;
-            font-size: 2.5rem; /* Sesuaikan ukuran font jika perlu */
+            font-size: 2.5rem;
         }
+
         .gallery {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .gallery-item {
             text-align: center;
             flex: 0 0 auto;
         }
+
+        /* --- Gambar + Efek Zoom --- */
         .gallery-item img {
             width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            touch-action: none;
         }
+
+        .gallery-item img.zoomed {
+            transform: scale(1.8);
+            position: relative;
+            z-index: 999;
+        }
+
         .gallery-item p {
             margin-top: 10px;
             font-size: 14px;
             max-width: 200px;
-            border: 2px solid #ddd; /* Border untuk membuat kotak */
-            border-radius: 8px; /* Sudut melengkung */
-            padding: 10px; /* Padding dalam kotak */
-            /* Menghapus background putih semi-transparan */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Bayangan ringan */
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        /* Warna teks unik untuk setiap caption */
-        .gallery-item:nth-child(1) p { color: #ff0000; } /* Merah */
-        .gallery-item:nth-child(2) p { color: #ff7f00; } /* Orange */
-        .gallery-item:nth-child(3) p { color: #ffff00; } /* Kuning */
-        .gallery-item:nth-child(4) p { color: #00ff00; } /* Hijau */
-        .gallery-item:nth-child(5) p { color: #0000ff; } /* Biru */
-        .gallery-item:nth-child(6) p { color: #4b0082; } /* Indigo */
-        .gallery-item:nth-child(7) p { color: #9400d3; } /* Ungu */
+
+        .gallery-item:nth-child(1) p { color: #ff0000; }
+        .gallery-item:nth-child(2) p { color: #ff7f00; }
+        .gallery-item:nth-child(3) p { color: #ffff00; }
+        .gallery-item:nth-child(4) p { color: #00ff00; }
+        .gallery-item:nth-child(5) p { color: #0000ff; }
+        .gallery-item:nth-child(6) p { color: #4b0082; }
+        .gallery-item:nth-child(7) p { color: #9400d3; }
+
         @media (max-width: 768px) {
             .gallery {
                 justify-content: center;
@@ -79,52 +91,62 @@
             }
             .gallery-item p {
                 max-width: 150px;
-                font-size: 12px; /* Ukuran font lebih kecil untuk mobile */
-                padding: 8px; /* Padding lebih kecil */
+                font-size: 12px;
+                padding: 8px;
             }
             h1 {
-                font-size: 2rem; /* Ukuran font lebih kecil untuk mobile */
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1 id="typingTitle"></h1>
+
         <div class="gallery">
+
             <div class="gallery-item">
                 <img src="RedRuby.jpg" alt="Rainbow Bubblegem 1">
-                <p>Red Ruby adalah seorang putri duyung yang sagat cantik dan menawan,semua orang suka dia karna dia sangat cantik.</p>
+                <p>Red Ruby adalah seorang putri duyung yang sangat cantik dan menawan, semua orang suka dia karena dia sangat cantik.</p>
             </div>
+
             <div class="gallery-item">
                 <img src="OrangeAmber.jpg" alt="Rainbow Bubblegem 2">
-                <p>Orange Amber adalah putri duyumg yang suka membuat kue untuk dibagikan ke teman temannya,dia sedikit introvet.</p>
+                <p>Orange Amber adalah putri duyung yang suka membuat kue untuk dibagikan ke teman-temannya, dia sedikit introvert.</p>
             </div>
+
             <div class="gallery-item">
                 <img src="YellowGold.jpg" alt="Rainbow Bubblegem 3">
-                <p>Yellow Gold adalah putri duyung yang sangat pendiam dan juga introvert,dia sering menyendiri dari semua orang,dan dia pandai melukis.</p>
+                <p>Yellow Gold adalah putri duyung yang sangat pendiam dan introvert, dia sering menyendiri dan pandai melukis.</p>
             </div>
+
             <div class="gallery-item">
                 <img src="GreenLeaf.jpg" alt="Rainbow Bubblegem 4">
-                <p>Green Leaf adalah putri duyung yang sangat pintar dan lebih pintar dari teman teman duyung nya,dia juga suka menyendiri seperti Yellow Gold.</p>
+                <p>Green Leaf adalah putri duyung yang sangat pintar, bahkan paling pintar dari semua temannya.</p>
             </div>
+
             <div class="gallery-item">
                 <img src="BlueShapire.jpg" alt="Rainbow Bubblegem 5">
-                <p>Blue Shapire adalah putri duyung yang sangat kuat,dia juga pandai bertarung dan bela diri,dia sangat suka membantu teman temannya.</p>
+                <p>Blue Shapire adalah putri duyung yang sangat kuat dan pandai bertarung, dia selalu membantu teman-temannya.</p>
             </div>
+
             <div class="gallery-item">
                 <img src="IndigoKen.jpg" alt="Rainbow Bubblegem 6">
-                <p>Indigo Ken adalah putri duyung yang misterius karna dia dulu membantu Black Diamond untuk mengalahkan para putri duyung,tapi sekarang dia membantu putri duyung dan menghianati Black Diamond</p>
+                <p>Indigo Ken adalah putri duyung misterius yang dulu membantu Black Diamond, namun kini membela para putri duyung.</p>
             </div>
+
             <div class="gallery-item">
                 <img src="PurpleStar.jpg" alt="Rainbow Bubblegem 7">
-                <p>Purple Star adalah putri duyung yang sangat imut dan juga nakal,karna dia sering bikin ulah di semua kejadian,Purple Star putri duyung yang sangat ramah ke semua orang</p>
+                <p>Purple Star adalah putri duyung yang imut dan nakal, tapi sangat ramah kepada semua orang.</p>
             </div>
+
         </div>
     </div>
 
     <script>
-        // Typing Effect untuk h1
+        // Efek mengetik pada judul
         const typingTitle = document.getElementById('typingTitle');
         const text = "Data Putri Duyung Rainbow Bubblegem";
         let index = 0;
@@ -133,14 +155,26 @@
             if (index < text.length) {
                 typingTitle.innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 150); // Kecepatan typing (ms per karakter)
+                setTimeout(typeWriter, 150);
             }
         }
+        window.addEventListener('load', typeWriter);
 
-        // Mulai typing effect setelah halaman load
-        window.addEventListener('load', () => {
-            typeWriter();
+        // Zoom gambar saat ditekan
+        const images = document.querySelectorAll('.gallery-item img');
+
+        images.forEach(img => {
+            // Desktop
+            img.addEventListener('mousedown', () => img.classList.add('zoomed'));
+            img.addEventListener('mouseup', () => img.classList.remove('zoomed'));
+            img.addEventListener('mouseleave', () => img.classList.remove('zoomed'));
+
+            // Mobile
+            img.addEventListener('touchstart', () => img.classList.add('zoomed'));
+            img.addEventListener('touchend', () => img.classList.remove('zoomed'));
+            img.addEventListener('touchcancel', () => img.classList.remove('zoomed'));
         });
     </script>
+
 </body>
 </html>
