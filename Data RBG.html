@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Rainbow Bubblegem Lovers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: contain; /* Menggunakan contain untuk menjaga rasio 9:16 tanpa distorsi */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: black; /* Warna latar untuk area kosong jika rasio layar berbeda */
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9); /* Tambahan untuk kontras jika diperlukan */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+            flex: 0 0 auto;
+        }
+        .gallery-item img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            max-width: 200px;
+            border: 2px solid #ddd; /* Border untuk membuat kotak */
+            border-radius: 8px; /* Sudut melengkung */
+            padding: 10px; /* Padding dalam kotak */
+            background-color: rgba(255, 255, 255, 0.8); /* Background semi-transparan untuk kontras */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Bayangan ringan */
+        }
+        /* Warna teks unik untuk setiap caption */
+        .gallery-item:nth-child(1) p { color: #ff0000; } /* Merah */
+        .gallery-item:nth-child(2) p { color: #ff7f00; } /* Orange */
+        .gallery-item:nth-child(3) p { color: #ffff00; } /* Kuning */
+        .gallery-item:nth-child(4) p { color: #00ff00; } /* Hijau */
+        .gallery-item:nth-child(5) p { color: #0000ff; } /* Biru */
+        .gallery-item:nth-child(6) p { color: #4b0082; } /* Indigo */
+        .gallery-item:nth-child(7) p { color: #9400d3; } /* Ungu */
+        @media (max-width: 768px) {
+            .gallery {
+                justify-content: center;
+            }
+            .gallery-item img {
+                width: 150px;
+                height: 150px;
+            }
+            .gallery-item p {
+                max-width: 150px;
+                font-size: 12px; /* Ukuran font lebih kecil untuk mobile */
+                padding: 8px; /* Padding lebih kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gallery Rainbow Bubblegem Lovers</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="RedRuby" alt="Rainbow Bubblegem 1">
+                <p>Caption 1: Potret indah Rainbow Bubblegem di bawah cahaya pelangi.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img2.jpg" alt="Rainbow Bubblegem 2">
+                <p>Caption 2: Komunitas berkumpul untuk diskusi tentang Bubblegem favorit.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img3.jpg" alt="Rainbow Bubblegem 3">
+                <p>Caption 3: Edit kreatif dari anggota tim dengan tema rainbow.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img4.jpg" alt="Rainbow Bubblegem 4">
+                <p>Caption 4: Waifu favorit dari Rainbow Bubblegem dalam pose lucu.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img5.jpg" alt="Rainbow Bubblegem 5">
+                <p>Caption 5: Proyek kolaborasi bulanan yang penuh warna.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img6.jpg" alt="Rainbow Bubblegem 6">
+                <p>Caption 6: Moment spesial dari event komunitas Rainbow Bubblegem Lovers.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img7.jpg" alt="Rainbow Bubblegem 7">
+                <p>Caption 7: Inspirasi dari dunia Rainbow Bubblegem untuk kreativitas harian.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
