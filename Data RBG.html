@@ -44,6 +44,31 @@
         .gallery-item {
             text-align: center;
             flex: 0 0 auto;
+            /* Animasi masuk: mulai dengan opacity 0 dan translateY */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Delay animasi untuk setiap item agar muncul satu per satu */
+        .gallery-item:nth-child(1) { animation-delay: 0s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.6s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.8s; }
+        .gallery-item:nth-child(6) { animation-delay: 1.0s; }
+        .gallery-item:nth-child(7) { animation-delay: 1.2s; }
+
+        /* Keyframe untuk animasi fade-in dari bawah */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* --- Gambar + Efek Zoom --- */
@@ -71,6 +96,10 @@
             border-radius: 8px;
             padding: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* Efek blur pada kotak container caption */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparan untuk efek glass */
+            backdrop-filter: blur(10px); /* Efek blur background */
+            -webkit-backdrop-filter: blur(10px); /* Untuk Safari */
         }
 
         .gallery-item:nth-child(1) p { color: #ff0000; }
